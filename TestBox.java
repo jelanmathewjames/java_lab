@@ -16,17 +16,21 @@ class Box{
 	}
 	
 	void volume(){
-		System.out.println("volume: "+length*breadth*height);
+		float volume = length*breadth*height;
+		System.out.println("volume: "+volume);
 	}
 	
 }
-
 class TestBox{
  
 	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter lenght, breadth, height");
-		Box b = new Box(sc.nextFloat(),sc.nextFloat(),sc.nextFloat());
-		b.volume();
+		System.out.println("Enter length, breadth, height");
+		Box b1 = new Box();
+		Box b2 = new Box(sc.nextFloat(),sc.nextFloat(),sc.nextFloat());
+		System.out.println("default constructor");
+		b1.volume();
+		System.out.println("parameterised constructor");
+		b2.volume();
 	}
 }
