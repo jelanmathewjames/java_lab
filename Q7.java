@@ -7,7 +7,7 @@ age, phone number, address and salary to an officer and a manager by making an
 object of both of these classes and print the same.*/
 
 import java.util.Scanner;
-import java.util.ArrayList;
+
 
 class Employee{
 
@@ -36,8 +36,8 @@ class Officer extends Employee{
 	private String specialization;
 	private String department;
 
-	Officer(String name,int age,long phone_number,
-				String address,double salary,
+	Officer(int age,long phone_number,double salary,
+				String name,String address,
 				String specialization,String department){
 				
 		super(name,age,phone_number,address,salary);
@@ -60,8 +60,8 @@ class Manager extends Employee{
 	private String specialization;
 	private String department;
 	
-	Manager(String name,int age,long phone_number,
-				String address,double salary,
+	Manager(int age,long phone_number,double salary,
+				String name,String address,
 				String specialization,String department){
 		super(name,age,phone_number,address,salary);
 		this.specialization = specialization;
@@ -85,22 +85,23 @@ class Q7{
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter details of Officer");
-		System.out.println("name, age, phone number, address,");
-		System.out.println("salary, specialization, department");
-		Officer officer = new Officer(sc.next(),sc.nextInt(),
-								sc.nextLong(),sc.next(),sc.nextDouble(),
-								sc.next(),sc.next());
+		System.out.println("age, phone number, salary, name, address,");
+		System.out.println("specialization, department");
+		Officer officer = new Officer(sc.nextInt(),sc.nextLong(),
+								sc.nextDouble(),sc.nextLine(),sc.nextLine(),
+								sc.nextLine(),sc.nextLine());
 		System.out.println("Details");
 		officer.printData();
 		System.out.println();
 		System.out.println("Enter details of Manager");
-		System.out.println("name, age, phone number, address,");
-		System.out.println("salary, specialization, department");
-		Manager manager = new Manager(sc.next(),sc.nextInt(),
-								sc.nextLong(),sc.next(),sc.nextDouble(),
-								sc.next(),sc.next());
+		System.out.println("age, phone number, salary, name, address,");
+		System.out.println("specialization, department");
+		Manager manager = new Manager(sc.nextInt(),sc.nextLong(),
+								sc.nextDouble(),sc.nextLine(),sc.nextLine(),
+								sc.nextLine(),sc.nextLine());
 		System.out.println("Details");
 		manager.printData();
 							
 	}
 }
+
