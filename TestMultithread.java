@@ -10,7 +10,7 @@ class TestMultithread{
 class RandomThread extends Thread{
 	public void run(){
 		try{
-			
+			Thread.sleep(1000);
 			Random r = new Random();
 			for(int i=0;i<10;i++){
 				int num = r.nextInt(100);
