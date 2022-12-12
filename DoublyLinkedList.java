@@ -5,7 +5,7 @@ class DoublyLinkedList{
 		List doubly = new List();
 		Scanner sc = new Scanner(System.in);
 		while(flag){
-			System.out.print("Enter\n 1 insert element\n 2 delete element\n 3 for display\n 4 exit");
+			System.out.print("Enter\n 1 insert element\n 2 delete element\n 3 exit");
 			char choice = sc.next().charAt(0);
 			switch(choice){
 				case '1':System.out.println("Enter data to insert");
@@ -13,10 +13,9 @@ class DoublyLinkedList{
 						 break;
 				case '2':System.out.println("Enter data to delete");
 						 doubly.delete(sc.nextInt());
+						 doubly.display();
 						 break;
-				case '3':doubly.display();
-						 break;
-				case '4':flag = false;
+				case '3':flag = false;
 						 break;
 				default:System.out.println("Invalid input");
 				
@@ -76,6 +75,7 @@ class List{
 			System.out.println("List is empty");
 		else{
 			Node temp = head;
+			System.out.print("content ");
 			while(temp != null){
 				System.out.print(temp.data+" ");
 				temp= temp.next;
