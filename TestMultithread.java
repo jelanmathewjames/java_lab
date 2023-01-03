@@ -10,19 +10,20 @@ class TestMultithread{
 class RandomThread extends Thread{
 	public void run(){
 		try{
-			Thread.sleep(1000);
-			Random r = new Random();
+        	Random r = new Random();
 			for(int i=0;i<10;i++){
-				int num = r.nextInt(100);
-				if(num%2==0)
-					new EvenThread(num).start();
-				else
-					new OddThread(num).start();
-			}
-		}
-		catch(Exception e){
-			System.out.println("HEllo");
-		}
+    			int num = r.nextInt(100);
+    			Thread.sleep(1000);
+   	    		if(num%2==0)
+   	        		new EvenThread(num).start();
+   	    		else
+   	        		new OddThread(num).start();
+            }
+        }
+        catch(Exception e){
+            System.out.println("Interrupted");
+        }
+
 	}
 }
 

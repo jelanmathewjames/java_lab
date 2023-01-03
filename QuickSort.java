@@ -3,50 +3,42 @@ import java.util.Scanner;
 class QuickSort{
 
 	static Scanner sc = new Scanner(System.in);
-	static void swap(int[] arr, int i, int j){
-		int temp = arr[j];
-		arr[j] = arr[i];
-		arr[i] = temp;
+	static void swap(String[] name, int i, int j){
+		String temp = name[j];
+		name[j] = name[i];
+		name[i] = temp;
 	}
-	static void readarray(int[] arr, int n){
-		for(int i=0;i<n;i++)
-			arr[i] = sc.nextInt();
-	}
-	static void printarray(int[] arr, int n){
-		for(int i=0;i<n;i++)
-			System.out.print(arr[i]+" ");
-		System.out.println();
-	}
-	static void quicksort(int[] arr, int left, int right){
-		if(left<right){
-			int pi = partition(arr,left,right);
-			quicksort(arr,pi+1,right);
-			quicksort(arr,left,pi-1);
-		}
-	}
-	static int partition(int[] arr,int left,int right){
-		int pivot = arr[right],i=left-1;
+	static int partition(String[] name,int left,int right){
+		String pivot = name[right];
+		int i=left-1;
 		for(int j = left;j<=right-1;j++){
-			if(arr[j]<pivot){
+			if(name[j].compareTo(pivot)<0){
 				i++;
-				swap(arr,i,j);
+				swap(name,i,j);
 				
 			}
-		}swap(arr,i+1,right);
+		}swap(name,i+1,right);
 		return (i+1);
+	}
+	static void quicksort(String[] name, int left, int right){
+		if(left<right){
+			int pi = partition(name,left,right);
+			quicksort(name,pi+1,right);
+			quicksort(name,left,pi-1);
+		}
 	}
 	public static void main(String args[]){
 		System.out.println("Enter the limit");
 		int limit = sc.nextInt();
-		int[] arr = new int[limit];
-		System.out.println("Enter elements");
-		readarray(arr,limit);
-		System.out.print("unsorted array :");
-		printarray(arr,limit);
-		quicksort(arr,0,limit-1);
-		System.out.print("sorted array :");
-		printarray(arr,limit);
-		
+		String[] name = new String[limit];
+		System.out.println("Enter names");
+		for(int i =0;i<limit;i++)
+			name[i] = sc.next();
+		quicksort(name,0,limit-1);
+		System.out.println("Sorted names");
+		for(int i = 0;i<limit;i++)
+			System.out.print(name[i]+" ");
+		System.out.println();
 	}
 }
 

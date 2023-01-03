@@ -18,7 +18,7 @@ class Q9{
 	public static void main(String[] args){
 		
 		try{
-			System.out.println("Program to perform Division");
+			
 			int value[] = getValue();
 			int c = value[0]/value[1];
 			System.out.println("Result="+c);

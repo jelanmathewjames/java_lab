@@ -14,9 +14,9 @@ class Display{
 			Thread.sleep(1000);
 		}
 		catch(Exception e){
-			System.out.println(e.getMessage());
+			System.out.print(e.getMessage());
 		}
-		System.out.println("]");
+		System.out.print("]");
 	}
 }
 class SyncThread extends Thread{
