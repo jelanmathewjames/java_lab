@@ -2,10 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class calculator {
-
-  calculator() {
-
+public class Calculator implements ActionListener{
+	JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bdiv, bmul, bsub, badd, bdec, beq, bdel, bclr, clear, dot;
+	JTextField jtf;
+  Calculator() {
+	
     JFrame jrm = new JFrame();
     jrm.setSize(500, 500);
 
@@ -13,12 +14,10 @@ public class calculator {
     jbl.setBounds(227, 10, 400, 30);
     jrm.add(jbl);
 
-    JTextField jtf = new JTextField();
+    jtf = new JTextField();
     jtf.setEditable(false);
     jtf.setBounds(50, 50, 400, 30);
     jrm.add(jtf);
-
-    JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bdiv, bmul, bsub, badd, bdec, beq, bdel, bclr, clear, dot;
 
     b1 = new JButton("1");
     b2 = new JButton("2");
@@ -31,7 +30,7 @@ public class calculator {
     b9 = new JButton("9");
     b0 = new JButton("0");
     bdiv = new JButton("/");
-    bmul = new JButton("*");
+    bmul = new JButton("X");
     bsub = new JButton("-");
     badd = new JButton("+");
     bdec = new JButton(".");
@@ -85,122 +84,27 @@ public class calculator {
     jrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     jrm.setVisible(true);
 
-    b1.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "1");
-      }
-    });
-    b2.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "2");
-      }
-    });
-    b3.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "3");
-      }
-    });
-    b4.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "4");
-      }
-    });
-    b5.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "5");
-      }
-    });
-    b6.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "6");
-      }
-    });
-    b7.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "7");
-      }
-    });
-    b8.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "8");
-      }
-    });
-    b9.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "9");
-      }
-    });
-    b0.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "0");
-      }
-    });
-    clear.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText("");
-      }
-    });
-    dot.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + ".");
-      }
-    });
-    badd.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "+");
-      }
-    });
-    bsub.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "-");
-      }
-    });
-    bmul.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "X");
-      }
-    });
-    bdiv.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
-          jtf.setText("");
-        jtf.setText(jtf.getText() + "/");
-      }
-    });
-
-    beq.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        try {
+    b1.addActionListener(this);
+    b2.addActionListener(this);
+    b3.addActionListener(this);
+    b4.addActionListener(this);
+    b5.addActionListener(this);
+    b6.addActionListener(this);
+    b7.addActionListener(this);
+    b8.addActionListener(this);
+    b9.addActionListener(this);
+    b0.addActionListener(this);
+    clear.addActionListener(this);
+    dot.addActionListener(this);
+    badd.addActionListener(this);
+    bsub.addActionListener(this);
+    bmul.addActionListener(this);
+    bdiv.addActionListener(this);
+	beq.addActionListener(this);
+  }
+  public void actionPerformed(ActionEvent e){
+     if(e.getSource() == beq){
+  		try {
           String S = jtf.getText();
           int i = 0;
           char b = S.charAt(i);
@@ -228,12 +132,20 @@ public class calculator {
         } catch (Exception ex) {
           jtf.setText("Enter two operands!");
         }
-      }
-    });
+     }else if(e.getSource() == clear){
+     	if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
+          jtf.setText("");
+        jtf.setText("");
+     }else{
+     	JButton source = (JButton)e.getSource();
+     	if (jtf.getText().equals("Enter two operands!") || jtf.getText().equals("Not defined!"))
+          jtf.setText("");
+        jtf.setText(jtf.getText() + source.getText());
+     }
+  
   }
-
   public static void main(String[] args) {
-    new calculator();
+    new Calculator();
   }
 
 }
